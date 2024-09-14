@@ -6,6 +6,7 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import IndexScreen from './src/screens/IndexScreen';
+import { BlogProvider } from './src/context/BlogContext';
 
 const Stack = createStackNavigator();
 
@@ -28,6 +29,12 @@ const App = () => {
   );
 };
 
-export default () => {
-  return <App />;
+const AppWithProvider = () => {
+  return (
+    <BlogProvider>
+      <App />
+    </BlogProvider>
+  );
 };
+
+export default AppWithProvider;
