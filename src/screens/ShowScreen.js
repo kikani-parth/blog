@@ -13,7 +13,7 @@ const ShowScreen = ({ navigation, route }) => {
   useEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <TouchableOpacity onPress={() => navigation.navigate('Edit')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Edit', { id })}>
           <MaterialIcons
             name="mode-edit"
             size={24}
