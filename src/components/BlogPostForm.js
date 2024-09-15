@@ -12,13 +12,14 @@ const BlogPostForm = ({
     <View>
       <Text style={styles.label}>Enter Title:</Text>
       <TextInput
-        style={styles.input}
+        style={styles.labelInput}
         value={title}
         onChangeText={(text) => setTitle(text)}
       />
       <Text style={styles.label}>Enter Content:</Text>
       <TextInput
-        style={styles.input}
+        multiline
+        style={styles.contentInput}
         value={content}
         onChangeText={(text) => setContent(text)}
       />
@@ -33,13 +34,24 @@ const styles = StyleSheet.create({
     margin: 10,
     marginBottom: 5,
   },
-  input: {
+  labelInput: {
     fontSize: 18,
     borderWidth: 1,
-    borderColor: 'black',
+    borderColor: 'gray',
+    borderRadius: 5,
     margin: 10,
     marginBottom: 15,
     padding: 5,
+  },
+  contentInput: {
+    fontSize: 18,
+    borderWidth: 1,
+    borderColor: 'gray',
+    borderRadius: 5,
+    margin: 10,
+    marginBottom: 15,
+    padding: 5,
+    height: 150,
   },
 });
 
