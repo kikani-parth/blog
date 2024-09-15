@@ -1,19 +1,18 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import {
   View,
   Text,
   StyleSheet,
   FlatList,
-  Button,
   TouchableOpacity,
 } from 'react-native';
 import { Context as BlogContext } from '../context/BlogContext';
-import { Ionicons } from '@expo/vector-icons/';
+import { Ionicons } from '@expo/vector-icons';
 
 const IndexScreen = ({ navigation }) => {
-  const { state, addBlogPost, deleteBlogPost } = useContext(BlogContext);
+  const { state, deleteBlogPost } = useContext(BlogContext);
 
-  React.useEffect(() => {
+  useEffect(() => {
     navigation.setOptions({
       headerRight: () => (
         <TouchableOpacity onPress={() => navigation.navigate('Create')}>
@@ -25,7 +24,6 @@ const IndexScreen = ({ navigation }) => {
 
   return (
     <View>
-      <Button title="Add Post" onPress={addBlogPost} />
       <FlatList
         data={state}
         keyExtractor={(blogPost) => blogPost.id}
