@@ -13,6 +13,16 @@ import { Ionicons } from '@expo/vector-icons/';
 const IndexScreen = ({ navigation }) => {
   const { state, addBlogPost, deleteBlogPost } = useContext(BlogContext);
 
+  React.useEffect(() => {
+    navigation.setOptions({
+      headerRight: () => (
+        <TouchableOpacity onPress={() => navigation.navigate('Create')}>
+          <Ionicons name="add" size={30} style={{ marginRight: 15 }} />
+        </TouchableOpacity>
+      ),
+    });
+  }, [navigation]);
+
   return (
     <View>
       <Button title="Add Post" onPress={addBlogPost} />
@@ -43,7 +53,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     paddingVertical: 20,
-    paddingHorizontal: 10,
+    paddingHorizontal: 15,
     margin: 15,
     borderColor: 'gray',
     borderRadius: 10,
