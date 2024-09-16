@@ -10,7 +10,7 @@ import { Context as BlogContext } from '../context/BlogContext';
 import { Ionicons } from '@expo/vector-icons';
 
 const IndexScreen = ({ navigation }) => {
-  const { state, deleteBlogPost } = useContext(BlogContext);
+  const { state, deleteBlogPost, getBlogPosts } = useContext(BlogContext);
 
   useEffect(() => {
     navigation.setOptions({
@@ -21,6 +21,10 @@ const IndexScreen = ({ navigation }) => {
       ),
     });
   }, [navigation]);
+
+  useEffect(() => {
+    getBlogPosts();
+  }, []);
 
   return (
     <View>

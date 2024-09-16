@@ -56,10 +56,10 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    padding: 10,
+    padding: 15,
   },
   content: {
-    padding: 10,
+    padding: 15,
   },
 });
 
